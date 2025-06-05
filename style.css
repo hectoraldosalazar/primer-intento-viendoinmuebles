@@ -1,0 +1,298 @@
+/*Como buena practica estoy estableciendo algunos estilos base para el body*/
+body{
+    margin: 0;
+    font-family: sans-serif;
+    background-color: white;
+    padding-top: 140px;
+}
+
+
+header {
+    position: fixed; /* Fija el header en la ventana del navegador */
+    top: 0;          /* Lo posiciona en la parte superior */
+    left: 0;         /* Lo posiciona a la izquierda */
+    width: 100%;     /* Hace que ocupe todo el ancho */
+    background-color: white; /* Color de fondo para el header (puedes cambiarlo) */
+    color: black;           /* Color de texto para el header (puedes cambiarlo) */
+    padding: 15px 20px;     /* Espaciado interno (arriba/abajo, izquierda/derecha) */
+    display: flex;          /* Usa Flexbox para alinear los elementos hijos (ul y nav) */
+    justify-content: space-between; /* Distribuye el espacio: ul a la izquierda, nav (search) a la derecha */
+    align-items: center;    /* Centra verticalmente los elementos hijos */
+    box-sizing: border-box; /* Asegura que el padding no aumente el ancho total más allá del 100% */
+    z-index: 1000;          /* Asegura que el header esté por encima de otros contenidos */
+}
+
+header img{
+   height: 100px; /* esto me determina una altura para la imagen */
+   width: auto; /* al dejar en auto cualquera de las dos heigth o width me permite que la imagen mantena su tamaño */
+   margin-right: 15px; /* añade un poco de espacio a la derecha del logo, margin derecha */
+}
+
+header ul {
+    list-style-type: none; /* Se eliminan los puntos de la lista */
+    margin: 0;
+    margin-right: 50px;
+    padding: 0;
+    display: flex; /*hace que la lista se alinee en forma horizontal*/
+    gap: 60px; /*genera un espacio entre cada una de las <li> */
+}
+
+header ul li {
+    border: 0.5px solid lightgrey;
+    padding : 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /*Sonbrea hacia adentro */
+}
+
+/* Aqui le estos quitando la decoracion y el color azul al link que se encuentra en le boton de destacados */
+
+header ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Estilo para el formulario de busqueda, para que se vea bien en la barra*/
+
+header nav form{
+    display : flex; /*alinea el input y el boton en una sola linea */
+    align-items: center; /* Centra vertical mente los elementos hijos */
+}
+
+/* Input search, estoy editando mi input search */
+
+header nav input[type="search"]{
+    padding: 20px 30px;
+    background-color: white;
+    color:black;
+    border: 1px solid lightgray;
+    border-radius:4px;
+    width: 450px;
+    height: 50px;
+    font-size: 16px;
+}
+ /*Esta es la edicion del boton de busqueda en el header, lo puse de color naranja*/
+header nav button[type="submit"]{
+    padding: 15px 25px;
+    background-color: #E37400;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20px; /*Aqui le agrego un espacio al boton a la izquierda, lo que le dara un espacio de la barra de busqueda */
+    font-size: 16px;;
+}
+
+#foto1{
+   margin-top: 20px;
+   height: 80px;
+   width: auto;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.imagendemuestra{
+    margin-top: 20px;
+    height:300px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-destacados{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.border-form-content {
+    display: inline-block;
+    padding: 45px;
+    border: 0.5px solid lightgray;
+    border-radius: 4px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la nueva seccion de redes sociales */
+.social-media-section{
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#toggleSocialButton { /* Esto es par darle estilo al boton como tal */
+    background: none;
+    border: 0.5px solid lightgray;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#socialIconsContainer{
+    margin-top: 20px;
+    display: none;
+}
+
+#socialIconsContainer a{
+    color: #333;
+    font-size: 30px;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#socialIconsContainer a:hover{
+    color: lightgray;
+}
+
+/* Clase para mostrar los iconos (usada por JavaScript) */
+#socialIconsContainer.social-icons-visible{
+    display: flex;
+    justify-content: center;
+}
+
+/* --- Estilos Responsivos --- */
+
+/* Para Tablets y laptops pequeñas (ej. pantallas hasta 768px de ancho) */
+@media (max-width: 1024px){
+    header {
+        padding: 10px 15px; /* Reducir padding del header */
+        flex-direction: column;
+        align-items: flex-start; /* Alinear elementos a la izquierda */
+    }
+
+    header img {
+        height: 80px;/*Reducir el tamañp deñ log*/
+        margin-bottom: 10px;
+    }
+
+    header ul {
+        gap: 30px; /* Reducir espacio entre items de la lista */
+        margin-right: 0;
+        margin-top: 15px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    header ul li {
+        padding: 8px 15px;
+    }
+
+    header nav form {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    header nav input[type="search"] {
+        width: calc(100% - 150px); /* Ajustar ancho de input, dejando espacio para el boton */
+        justify-content: space-between;
+    }
+
+    header nav button[type="submit"] {
+        padding: 12px 20px;
+        font-size: 15px;
+        margin-left: 10px;;
+    }
+
+    body {
+        padding-top: 220px; /*Ajustar el padding-top del body por el header mas alto */
+    }
+
+    .imagendemuestra {
+        height: 250px;
+    }
+
+    .border-form-content {
+        padding: 30px;
+    }
+}
+
+/* Para Tablets en vertical y móviles grandes (ej. pantallas hasta 768px de ancho) */
+@media (max-width: 768px) {
+    body {
+        padding-top: 200px; /* Ajustar padding-top del body */
+    }
+
+    header img {
+        height: 70px; /* Reducir más el logo */
+        align-self: center; /* Centrar el logo cuando el header es columna */
+    }
+
+    header ul {
+        flex-direction: column; /* Apilar los items de la lista verticalmente */
+        align-items: center; /* Centrar los items de la lista */
+        gap: 15px; /* Espacio entre items apilados */
+        width: 100%;
+    }
+
+    header ul li {
+        width: 80%; /* Hacer que los botones de nav ocupen más ancho */
+        text-align: center;
+    }
+
+    header nav form {
+        flex-direction: column; /* Apilar input y botón de búsqueda */
+        align-items: stretch; /* Estirar para que ocupen el ancho */
+    }
+
+    header nav input[type="search"] {
+        width: 100%; /* Input de búsqueda a ancho completo */
+        margin-bottom: 10px; /* Espacio debajo del input */
+        height: 40px;
+        font-size: 14px;
+    }
+
+    header nav button[type="submit"] {
+        width: 100%; /* Botón de búsqueda a ancho completo */
+        margin-left: 0; /* Quitar margen izquierdo */
+        font-size: 15px;
+    }
+
+    .imagendemuestra, #foto1 {
+        width: 90%; /* Hacer imágenes más responsivas */
+        height: auto;
+    }
+}
+
+/* Para móviles pequeños (ej. pantallas hasta 480px de ancho) */
+@media (max-width: 480px) {
+    body {
+        padding-top: 280px; /* Ajustar padding-top del body para header más alto */
+    }
+
+    header img {
+        height: 60px; /* Logo aún más pequeño */
+    }
+
+    header ul li {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    header nav input[type="search"] {
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+
+    header nav button[type="submit"] {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .border-form-content {
+        padding: 20px;
+        width: 90%;
+        box-sizing: border-box;
+    }
+
+    #socialIconsContainer a {
+        font-size: 24px; /* Reducir tamaño de iconos sociales */
+        margin: 0 10px;
+    }
+}
+
