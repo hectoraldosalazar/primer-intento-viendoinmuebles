@@ -12,6 +12,6 @@ document.addEventListener('DOMContentLoaded', function(){
          // Alterna la clase 'social-icons-visible' en el contenedor de iconos
             // Esto cambiará su display de 'none' a 'flex' (o viceversa) según el CSS
             iconsContainer.classList.toggle('social-icons-visible');
-      }); 
+      });q 
    }
 });
